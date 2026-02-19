@@ -5,7 +5,7 @@ input[type='text']:focus,
 input[type='email']:focus,
 .search-bar .menu .header-container input:focus {
   border-color: @accent;
-  box-shadow: 0 0 1.5px @accent;
+  box-shadow: 0 0 0 3px fade(@accent, 20%);
 }
 
 .search-bar {
@@ -20,5 +20,5 @@ input[type='email']:focus,
 .menu .item.selected,
 .menu .item:active,
 .search-container .content-container .item.selected {
-  background: @accent;
+  background: fade(@accent, 22%);
 }
