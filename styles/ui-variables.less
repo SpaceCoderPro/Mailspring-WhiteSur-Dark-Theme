@@ -3,142 +3,133 @@
 // `ui-variables` to make their custom CSS react to the current theme.
 @import 'base/ui-variables';
 
-// Default
-@sidebar: #353535;
-@accent: #252525;
-@background: #000000;
-@background-primary: #dddddd;
+@sidebar: #171a22;
+@accent: #5ea2ff;
+@background: #0f1218;
+@background-primary: @background;
 
 @accent-primary: @accent;
-@threadlist-bg: #FCFCFC;
-@messagelist-bg: black;
-@active-thread-text: @sidebar;
-@sidebar-text: #ffffff;
+@threadlist-bg: #161b23;
+@messagelist-bg: #11161f;
+@active-thread-text: #eaf2ff;
+@sidebar-text: #c6d0df;
 @active-sidebar-text: #ffffff;
-@border-color: fade(@sidebar, 100%);
-@danger: #ff5f56;
+@border-color: #2a3240;
+@danger: #ff6a6a;
 @minimize: #fbd852;
 @maximize: #8dd07d;
 @swipe-archive: #8dd07d;
 @swipe-snooze: #fbd852;
 @swipe-trash: @danger;
 @invalid: @danger;
-@gblue: linear-gradient(135deg, @icon-color 10%, #2a62fe 80%);
-@icon-color: rgb(65, 155, 249);
+@icon-color: #84b8ff;
+@gblue: linear-gradient(135deg, #5ea2ff 10%, #7f73ff 80%);
 
-@sidebar-margin: 15px;
-@border-radius: 8px;
+@sidebar-margin: 14px;
+@border-radius: 12px;
 
 @gray-base: @sidebar;
-@gray-darker: darken(@gray-base, 13.5%);
-@gray-dark: darken(@gray-base, 20%);
-@gray: darken(@gray-base, 33.5%);
-@gray-light: darken(@gray-base, 46.7%);
-@gray-lighter: darken(@gray-base, 92.5%);
-@white: @gray-dark;
+@gray-darker: darken(@gray-base, 7%);
+@gray-dark: darken(@gray-base, 3%);
+@gray: lighten(@gray-base, 10%);
+@gray-light: lighten(@gray-base, 22%);
+@gray-lighter: lighten(@gray-base, 55%);
+@white: #ffffff;
 
 @accent-primary-dark: darken(@accent-primary, 10%);
 
-@background-primary: black;
-@background-off-primary: @background-primary;
-@background-secondary: @gray-base;
-@background-tertiary: @gray-base;
+@background-off-primary: #111722;
+@background-secondary: #161b23;
+@background-tertiary: #1d2430;
 
-@border-color-primary: lighten(@background-primary, 10%);
-@border-color-secondary: lighten(@background-secondary, 10%);
-@border-color-tertiary: lighten(@background-tertiary, 10%);
+@border-color-primary: #283041;
+@border-color-secondary: #2f3848;
+@border-color-tertiary: #364255;
 @border-color-divider: @border-color-secondary;
 
-@text-color: @threadlist-bg;
-@text-color-subtle: fadeout(@text-color, 20%);
-@text-color-very-subtle: fadeout(@text-color, 40%);
-@text-color-inverse: black;
+@text-color: #e3ecf8;
+@text-color-subtle: fadeout(@text-color, 24%);
+@text-color-very-subtle: fadeout(@text-color, 42%);
+@text-color-inverse: #0f1218;
 @text-color-inverse-subtle: fadeout(@text-color-inverse, 20%);
 @text-color-inverse-very-subtle: fadeout(@text-color-inverse, 50%);
 @text-color-heading: @text-color;
 
 @text-color-link: @accent-primary;
-@text-color-link-hover: @accent-primary-dark;
+@text-color-link-hover: lighten(@accent-primary, 8%);
 @text-color-link-active: @accent-primary-dark;
 
-@btn-default-bg-color: lighten(@background-primary, 5%);
-@dropdown-default-bg-color: #1B1D24;
+@btn-default-bg-color: #1c2432;
+@dropdown-default-bg-color: #151c28;
 
-@input-bg: #21252B;
-@input-border: @border-color-divider;
+@input-bg: #1a2230;
+@input-border: #2f3b4f;
 
-@list-bg: @background-primary;
-@list-border: #21252B;
-@list-selected-color: @text-color-inverse;
+@list-bg: @background-secondary;
+@list-border: @border-color-divider;
+@list-selected-color: @text-color;
 @list-focused-color: @text-color;
 
-@toolbar-background-color: #14161B;
+@toolbar-background-color: #131a25;
 @panel-background-color: @sidebar;
 
 .sheet-toolbar {
   border-bottom: 1px solid @border-color-divider;
-  box-shadow: none;
+  box-shadow: 0 10px 24px fade(#000, 22%);
 }
 
 .thread-icon:not(.thread-icon-unread):not(.thread-icon-star) {
-  filter: invert(100%);
+  filter: brightness(1.15);
 }
-img.content-dark {
-  filter: invert(100%);
-}
+
+img.content-dark,
 img.content-light {
-  filter: invert(100%);
+  filter: none;
 }
 
 .mail-label {
-  filter: contrast(110%) brightness(85%);
+  filter: contrast(110%) brightness(95%);
 }
 
 .thread-list .list-item:not(.unread):not(.selected):not(.focused) {
-  color: #aaa;
+  color: @text-color-subtle;
 }
 
-.list-item.focused, .list-item.selected, .list-item.selected {
-  color: #FFFFFF !important;
+.list-item.focused,
+.list-item.selected {
+  color: @white !important;
 }
 
-.thread-list .list-item.thread-list-reminder-item {
-  background-color: #312856;
-
-  &.unread {
-    background-color: #312856;
-    &:not(.focused):not(.selected) {
-      background-color: #312856;
-    }
-  }
+.thread-list .list-item.thread-list-reminder-item,
+.thread-list .list-item.thread-list-reminder-item.unread,
+.thread-list .list-item.thread-list-reminder-item.unread:not(.focused):not(.selected) {
+  background-color: #2e2750;
 }
 
-.button-dropdown.btn-emphasis .primary-item, .button-dropdown.btn-emphasis .secondary-picker, .button-dropdown.btn-emphasis .only-item {
-  color: white;
+.button-dropdown.btn-emphasis .primary-item,
+.button-dropdown.btn-emphasis .secondary-picker,
+.button-dropdown.btn-emphasis .only-item {
+  color: #fff;
 }
 
-.button-dropdown.btn-emphasis .primary-item img.content-mask, .button-dropdown.btn-emphasis .secondary-picker img.content-mask, .button-dropdown.btn-emphasis .only-item img.content-mask {
-  background-color: white;
+.button-dropdown.btn-emphasis .primary-item img.content-mask,
+.button-dropdown.btn-emphasis .secondary-picker img.content-mask,
+.button-dropdown.btn-emphasis .only-item img.content-mask {
+  background-color: #fff;
 }
 
 .send-reminders-header {
-  color: #7d5bef;
-  background: #312856;
-  border-bottom: 1px solid #4d3b8a;
-}
-
-.ignore-in-parent-frame {
-  body {
-    filter: invert(100%) hue-rotate(180deg);
-    color: #111 !important;
-  }
-  img {
-    filter: invert(100%) hue-rotate(180deg);
-  }
+  color: #9f8cff;
+  background: #2e2750;
+  border-bottom: 1px solid #4f4482;
 }
 
 select,
-.btn {
+.btn,
+.thread-search-bar,
+.token,
+input,
+textarea {
   border-radius: @border-radius;
 }
 
@@ -153,4 +144,3 @@ select,
 .button-dropdown .only-item {
   border-radius: @border-radius;
 }
-
